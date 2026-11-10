@@ -173,6 +173,10 @@ Simpan gambar dengan nama berikut di `doc/screenshots/` agar tampil di sini.
 
 <video src="doc/screenshots/chat-streaming.mp4" controls muted width="100%"></video>
 
+https://github.com/user-attachments/assets/2716848a-1a94-469e-87e8-46bfd52dec34
+
+
+
 Video tidak diputar? [Unduh atau buka videonya](doc/screenshots/chat-streaming.mp4).
 
 ![Panel kode dengan pewarna sintaks](doc/screenshots/chat-code-panel.png)
