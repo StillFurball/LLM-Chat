@@ -11,7 +11,7 @@ menyimpan riwayat ke database, dan mengembalikan JSON lewat API Resource.
 ## Kondisi proyek saat instruksi ini ditulis (verifikasi ulang sebelum mulai)
 
 - Laravel 13, PHP 8.5, Livewire 4, Flux UI 2, Fortify (login/registrasi sudah ada), Pest 5, Tailwind 4.
-- Database: SQLite. Model yang ada hanya `User`. Belum ada `routes/api.php` dan Sanctum belum terpasang.
+- Database: mysql. Model yang ada hanya `User`. Belum ada `routes/api.php` dan Sanctum belum terpasang.
 - Ikuti `AGENTS.md`: buat file dengan `php artisan make:* --no-interaction`, aktifkan skill
   `laravel-best-practices` dan `testing-best-practices`, jalankan `vendor/bin/pint --dirty --format agent` di akhir.
 
@@ -42,9 +42,10 @@ menyimpan riwayat ke database, dan mengembalikan JSON lewat API Resource.
 ```
 OLLAMA_URL=http://localhost:11434
 OLLAMA_MODEL=qwen3:14b
-SENOPATI_URL=
+SENOPATI_URL=https://senopati.its.ac.id/llm-gateway/v1
 SENOPATI_TOKEN=
-SENOPATI_MODEL=
+SENOPATI_API_KEY=
+SENOPATI_MODEL=qwen3:14b
 LLM_SYSTEM_PROMPT="Anda adalah asisten karier untuk pencari kerja di Indonesia. Bantu pengguna memperbaiki CV dan surat lamaran, menyiapkan jawaban wawancara, menganalisis kecocokan dengan lowongan, dan menyusun rencana pengembangan skill. Jawab dalam bahasa Indonesia yang ringkas dan praktis, dengan langkah konkret. Jika informasi kurang (posisi yang dilamar, pengalaman, isi lowongan), tanyakan dulu. Jangan mengarang pengalaman, gelar, atau data gaji; jika tidak tahu, katakan terus terang. Tolak dengan sopan permintaan di luar topik karier."
 ```
 
@@ -67,7 +68,7 @@ tanda kutip ganda di dalamnya. Pakai nilai yang sama sebagai default di `config/
      "status": "success",
      "data": {
        "session_id": 12,
-       "model_used": "qwen3:14b",
+       "model_used": "qwen3:8b",
        "prompt": "Jelaskan middleware!",
        "ai_response": "Middleware adalah...",
        "timestamp": "2026-08-28 09:30:00"
